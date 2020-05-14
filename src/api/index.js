@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-//const url = 'https://covid19.mathdro.id/api';
+const url = 'https://covid19.mathdro.id/api';
 const url2 = 'https://api.covid19api.com';
 
 export const fetchData = async (country) => {
@@ -59,7 +59,7 @@ export const fetchDailyData =  async (country)=> {
             return modifiedData
         }
         else {
-            /*
+            ///*
             const { data } = await axios.get(`${url}/daily`);
 
             const modifiedData = data.map((dailyData)=>({
@@ -68,8 +68,8 @@ export const fetchDailyData =  async (country)=> {
                 date: dailyData.reportDate,
             }));
             return modifiedData;
-            */
-            ///*
+            //*/
+            /*
             let modifiedData = getData();
             const APIurl = `${url2}/summary`;
             const APIdata = await axios.get(APIurl);
@@ -86,7 +86,7 @@ export const fetchDailyData =  async (country)=> {
             modifiedData.push(dailyData);
             localStorage.setItem('modifiedData',JSON.stringify(modifiedData));
             return modifiedData;
-            //*/
+            */
         }
     } catch (error) {
         console.log(error);
@@ -96,7 +96,7 @@ export const fetchDailyData =  async (country)=> {
 function getData() {
     var modifiedData = localStorage.getItem('modifiedData');
     if (modifiedData === null) {
-        return [];
+        return null;
     }
     else {
         return JSON.parse(modifiedData);
