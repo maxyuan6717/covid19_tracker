@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'https://covid19.mathdro.id/api';
+//const url = 'https://covid19.mathdro.id/api';
 const url2 = 'https://api.covid19api.com';
 
 export const fetchData = async (country) => {
@@ -46,7 +46,7 @@ export const fetchDailyData =  async (country)=> {
         if (country) {
             const APIurl = `${url2}/total/dayone/country/${country}`;
             const APIdata = await axios.get(APIurl);
-            const len = APIdata.data.length;
+            //const len = APIdata.data.length;
             //console.log(country);
 
             const modifiedData = APIdata.data.map((dailyData)=>({
